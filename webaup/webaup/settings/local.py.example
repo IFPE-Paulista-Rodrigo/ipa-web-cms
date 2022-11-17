@@ -1,0 +1,3 @@
+from webaup.settings.dev import *   # noqa
+
+# Override settings here
