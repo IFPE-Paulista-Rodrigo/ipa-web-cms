@@ -35,11 +35,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     "webaup.base",
     "webaup.blog",
     "webaup.breads",
     "webaup.locations",
     "webaup.search",
+
     "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
