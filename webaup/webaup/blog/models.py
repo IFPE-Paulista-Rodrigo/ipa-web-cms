@@ -55,21 +55,21 @@ class BlogPage(Page):
     https://docs.wagtail.org/en/stable/topics/pages.html#inline-models
     """
 
-    introduction = models.TextField(help_text="Text to describe the page", blank=True)
+    introduction = models.TextField(help_text="Texto para descrever a página", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Landscape mode only; horizontal width between 1000px and 3000px.",
+        help_text="Somente modo paisagem; largura horizontal entre 1000px e 3000px.",
     )
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True, use_json_field=True
     )
     subtitle = models.CharField(blank=True, max_length=255)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
-    date_published = models.DateField("Date article published", blank=True, null=True)
+    date_published = models.DateField("Data de publicação do artigo", blank=True, null=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
@@ -78,7 +78,7 @@ class BlogPage(Page):
         FieldPanel("body"),
         FieldPanel("date_published"),
         InlinePanel(
-            "blog_person_relationship", label="Author(s)", panels=None, min_num=1
+            "blog_person_relationship", label="Autor(es)", panels=None, min_num=1
         ),
         FieldPanel("tags"),
     ]
@@ -129,14 +129,14 @@ class BlogIndexPage(RoutablePageMixin, Page):
     defined above.
     """
 
-    introduction = models.TextField(help_text="Text to describe the page", blank=True)
+    introduction = models.TextField(help_text="Texto para descrever a página", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Landscape mode only; horizontal width between 1000px and 3000px.",
+        help_text="Somente modo paisagem; largura horizontal entre 1000px e 3000px.",
     )
 
     content_panels = Page.content_panels + [
@@ -174,7 +174,7 @@ class BlogIndexPage(RoutablePageMixin, Page):
             tag = Tag.objects.get(slug=tag)
         except Tag.DoesNotExist:
             if tag:
-                msg = 'There are no blog posts tagged with "{}"'.format(tag)
+                msg = 'Não há postagens de blog marcadas com "{}"'.format(tag)
                 messages.add_message(request, messages.INFO, msg)
             return redirect(self.url)
 

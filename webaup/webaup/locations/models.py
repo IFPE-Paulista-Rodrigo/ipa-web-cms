@@ -22,7 +22,7 @@ class OperatingHours(models.Model):
     opening_time = models.TimeField(blank=True, null=True)
     closing_time = models.TimeField(blank=True, null=True)
     closed = models.BooleanField(
-        "Closed?", blank=True, help_text="Tick if location is closed on this day"
+        "Closed?", blank=True, help_text="Marque se o local estiver fechado neste dia"
     )
 
     panels = [
@@ -67,14 +67,14 @@ class LocationsIndexPage(Page):
     A Page model that creates an index page (a listview)
     """
 
-    introduction = models.TextField(help_text="Text to describe the page", blank=True)
+    introduction = models.TextField(help_text="Texto para descrever a página", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Landscape mode only; horizontal width between 1000px and 3000px.",
+        help_text="Somente modo paisagem; largura horizontal entre 1000px and 3000px.",
     )
 
     # Only LocationPage objects can be added underneath this index page
@@ -107,14 +107,14 @@ class LocationPage(Page):
     Detail for a specific bakery location.
     """
 
-    introduction = models.TextField(help_text="Text to describe the page", blank=True)
+    introduction = models.TextField(help_text="Texto para descrever a página", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Landscape mode only; horizontal width between 1000px and 3000px.",
+        help_text="Somente modo paisagem; largura horizontal entre 1000px and 3000px.",
     )
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True, use_json_field=True
@@ -122,12 +122,12 @@ class LocationPage(Page):
     address = models.TextField()
     lat_long = models.CharField(
         max_length=36,
-        help_text="Comma separated lat/long. (Ex. 64.144367, -21.939182) \
-                   Right click Google Maps and select 'What's Here'",
+        help_text="Separados por vírgula lat/long. (Ex. 64.144367, -21.939182) \
+                   Clique com o botão direito do mouse em Google Maps e selecione 'O que é aqui'",
         validators=[
             RegexValidator(
                 regex=r"^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$",
-                message="Lat Long must be a comma-separated numeric lat and long",
+                message="Latitude e Longetitude deve ser um numérico separado por vírgula",
                 code="invalid_lat_long",
             ),
         ],

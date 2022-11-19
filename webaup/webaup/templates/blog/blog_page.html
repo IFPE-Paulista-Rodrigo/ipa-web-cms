@@ -23,9 +23,9 @@
                 {{ page.body }}
 
                 {% if page.get_tags %}
-                    <p class="blog__tag-introduction">Find more blog posts with similar tags</p>
+                    <p class="blog__tag-introduction">Encontre mais postagens de blog com tags semelhantes</p>
                     <div class="blog-tags blog-tags--condensed">
-                        <span class="u-sr-only">Filter blog posts by tag</span>
+                        <span class="u-sr-only">Filtrar postagens de blog por tag</span>
                         {% for tag in page.get_tags %}
                             <a href="{{ tag.url }}" class="blog-tags__pill">{{ tag }}</a>
                         {% endfor %}
