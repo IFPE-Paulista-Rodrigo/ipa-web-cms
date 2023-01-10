@@ -11,6 +11,7 @@ from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
+from wagtail.api import APIField
 
 from webaup.base.blocks import BaseStreamBlock
 from webaup.base.models import Person
@@ -81,6 +82,16 @@ class BlogPage(Page):
             "blog_person_relationship", label="Autor(es)", panels=None, min_num=1
         ),
         FieldPanel("tags"),
+    ]
+
+    
+    api_fields = [
+        APIField('introduction'),
+        APIField('image'),
+        APIField('body'),
+        APIField('subtitle'),
+        APIField('tags'),
+        APIField('date_published')
     ]
 
     search_fields = Page.search_fields + [
