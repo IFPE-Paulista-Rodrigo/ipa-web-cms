@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
+    "leaflet",
+    "leaflet_admin_list"
 ]
 
 MIDDLEWARE = [
@@ -193,3 +195,12 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("de", "Deutsch"),
     ("ar", "العربيّة"),
 ]
+
+LEAFLET_CONFIG = {
+    # conf here
+'DEFAULT_CENTER': (-8.551773747875822, -36.98554575980532),
+'DEFAULT_ZOOM': 7,
+'MIN_ZOOM': 3,
+'MAX_ZOOM': 18,
+'DEFAULT_PRECISION': 6,
+}
