@@ -71,6 +71,7 @@ class BlogPage(Page):
     subtitle = models.CharField(blank=True, max_length=255)
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
     date_published = models.DateField("Data de publicação do artigo", blank=True, null=True)
+    last_modified = models.DateField("Data de atualização do artigo", auto_now=True)
 
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
@@ -91,7 +92,8 @@ class BlogPage(Page):
         APIField('body'),
         APIField('subtitle'),
         APIField('tags'),
-        APIField('date_published')
+        APIField('date_published'),
+        APIField('last_modified')
     ]
 
     search_fields = Page.search_fields + [
