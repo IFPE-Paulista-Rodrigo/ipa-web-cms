@@ -29,7 +29,7 @@ class Country(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = "Countries of Origin"
+        verbose_name_plural = "Locais de Origem"
 
 
 @register_snippet

@@ -65,45 +65,74 @@
         </div>
         
 
-        <div class="leaflet-container">
-        
-        <script>
-            
-        function map_init_basic (map, options) {
-            var marker = L.marker([-7.937980684863552, -34.877658401127235]).addTo(map);
-
-            marker.bindPopup("<b>Paulista</b>");
-            marker.on('click', function() {
-            window.location.href = 'locations/paulista';
-        });
-
-        var marker = L.marker([-8.29316784386745, -35.983504001363464]).addTo(map);
-
-            marker.bindPopup("<b>Caruaru</b>");
-            marker.on('click', function() {
-            window.location.href = 'locations/caruaru';
-        });
-
-        var marker = L.marker([-8.419704518568702, -37.05587860053689]).addTo(map);
-
-            marker.bindPopup("<b>Arcoverde</b>");
-            marker.on('click', function() {
-            window.location.href = 'locations/arcoverde';
-        });
-            
-            
-            }
-        </script>
-        
-        {% leaflet_map "mapaPrincipal" callback="window.map_init_basic" %}
-        </div>
-        
+             
         <div class="container">
             <div class="row">
-                <div class="col-md-12 locations-section">
-                    {% if page.featured_section_2 %}
-                        <h2 class="locations-section__title">{{ page.featured_section_2_title }}</h2>
-                        {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
+            <div class="col-md-12 locations-section">
+                
+                {% if page.featured_section_2 %}
+               
+                     <h2 class="locations-section__title">{{ page.featured_section_2_title }}</h2>
+                     <div class="leaflet-container">
+        
+                        <script>
+                            
+                        function map_init_basic (map, options) {
+                        var newIcon = L.icon({
+                            iconUrl:'/static/img/legumes.png',
+                            iconSize: [38,38],
+                            iconAnchor: [22,22],
+                        });  
+                            
+                        var marker = L.marker([-7.937980684863552, -34.877658401127235], {icon: newIcon}).addTo(map);
+                
+                        marker.bindPopup("<b>Paulista</b>");
+                        marker.on('click', function() {
+                        window.location.href = 'locations/paulista';
+                        });
+                
+                        var marker = L.marker([-8.29316784386745, -35.983504001363464], {icon: newIcon}).addTo(map);
+                
+                            marker.bindPopup("<b>Caruaru</b>");
+                            marker.on('click', function() {
+                            window.location.href = 'locations/caruaru';
+                        });
+                
+                        var marker = L.marker([-8.419704518568702, -37.05587860053689], {icon: newIcon}).addTo(map);
+                
+                            marker.bindPopup("<b>Arcoverde</b>");
+                            marker.on('click', function() {
+                            window.location.href = 'locations/arcoverde';
+                        });
+
+                        var marker = L.marker([-9.380735302809258, -40.511425275615075], {icon: newIcon}).addTo(map);
+                
+                            marker.bindPopup("<b>Petrolina</b>");
+                            marker.on('click', function() {
+                            window.location.href = 'locations/petrolina';
+                        });
+
+                        var marker = L.marker([-8.36252153969664, -35.2337694793697], {icon: newIcon}).addTo(map);
+                
+                            marker.bindPopup("<b>Escada</b>");
+                            marker.on('click', function() {
+                            window.location.href = 'locations/escada';
+                        });
+
+                        var marker = L.marker([-8.894888175873525, -36.50025248703563], {icon: newIcon}).addTo(map)
+
+                        marker.bindPopup("<b>Garanhuns</b>");
+                        marker.on('click', function(){
+                            window.location.href = 'locations/garanhuns'
+                        })
+                            
+                            
+                            }
+                        </script>
+                        
+                        {% leaflet_map "mapaPrincipal" callback="window.map_init_basic" %}
+                        </div>   
+                     {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
                             {% include "includes/card/location-card.html" with page=childpage %}
                         {% endfor %}
                     {% endif %}

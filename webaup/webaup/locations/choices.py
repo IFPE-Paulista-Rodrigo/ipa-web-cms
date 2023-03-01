@@ -1,9 +1,9 @@
 DAY_CHOICES = (
-    ("MON", "Monday"),
-    ("TUES", "Tuesday"),
-    ("WED", "Wednesday"),
-    ("THUR", "Thursday"),
-    ("FRI", "Friday"),
-    ("SAT", "Saturday"),
-    ("SUN", "Sunday"),
+    ("SEG", "Segunda-Feira"),
+    ("TER", "Terça-Feira"),
+    ("QUA", "Quarta-Feira"),
+    ("QUI", "Quinta-Feira"),
+    ("SEX", "Sexta-Feira"),
+    ("SAB", "Sábado"),
+    ("DOM", "Domingo"),
 )
