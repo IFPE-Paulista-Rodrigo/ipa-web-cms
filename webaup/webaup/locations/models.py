@@ -132,7 +132,11 @@ class LocationPage(Page):
             ),
         ],
     )
+    email = models.TextField(help_text="E-mail para contato", blank=True)
+    phone = models.TextField(help_text="Número de telefone para contato, formato (xx)xxxxx-xxxx", blank=True)
 
+
+    
     # Search index configuration
     search_fields = Page.search_fields + [
         index.SearchField("address"),
@@ -147,6 +151,8 @@ class LocationPage(Page):
         FieldPanel("body"),
         FieldPanel("address", classname="full"),
         FieldPanel("lat_long"),
+        FieldPanel("email"),
+        FieldPanel("phone"),
         InlinePanel("hours_of_operation", label="Hours of Operation"),
     ]
 

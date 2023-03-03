@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1>Search results</h1>
+                <h1>Resultados da pesquisa</h1>
                 {% if search_results %}
-                    <p class="search__introduction">You searched{% if search_query %} for “{{ search_query }}”{% endif %}, {{ search_results|length }} result{{ search_results|length|pluralize }} found.</p>
+                    <p class="search__introduction">Você procurou{% if search_query %} por “{{ search_query }}”{% endif %}, {{ search_results|length }} resultado(s){{ search_results|length|pluralize }} encontrado(s).</p>
                     <ul class="search__results">
                         {% for result in search_results %}
                             <li class="listing-card">
@@ -25,9 +25,9 @@
                                             {% if result.specific.content_type.model == "blogpage" %}
                                                 Blog Post
                                             {% elif result.specific.content_type.model == "locationpage" %}
-                                                Location
+                                                Local
                                             {% else %}
-                                                Bread
+                                                Produto
                                             {% endif %}
                                         </p>
                                         <p class="listing-card__description">

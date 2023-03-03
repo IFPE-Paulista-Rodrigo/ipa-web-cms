@@ -37,7 +37,7 @@
                                 </li>
                             {% endfor %}
                         </ul>
-                        <a class="featured-cards__link" href="/products">
+                        <a class="featured-cards__link" href="/produtos">
                             <span>Veja mais produtos</span>
                             {% include "includes/chevron-icon.html" with class="featured-cards__chevron-icon" %}
                         </a>
@@ -132,12 +132,17 @@
                         
                         {% leaflet_map "mapaPrincipal" callback="window.map_init_basic" %}
                         </div>   
-                     {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
+                        
+                        {% for childpage in page.featured_section_2.specific.children|slice:"3" %}
                             {% include "includes/card/location-card.html" with page=childpage %}
-                        {% endfor %}
-                    {% endif %}
+                            {% endfor %}
+                        
+                     {% endif %}
+                     
+                     
                 </div>
-            </div>
+                    </div>
+                
         </div>
 
         {% if page.featured_section_3 %}

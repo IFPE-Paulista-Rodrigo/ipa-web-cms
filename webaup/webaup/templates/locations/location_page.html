@@ -33,7 +33,10 @@
 
                             <p class="location__meta-title">Endereço</p>
                             <address>{{ page.address|linebreaks }}</address>
-
+                            <p class="location__meta-title">Contato</p>
+                            <p>E-mail: <email>{{page.email}}</email></p>
+                            <p>Telefone: <phone>{{page.phone}}</phone></p>
+                            
                             {% if page.operating_hours %}
                                 <p class="location__meta-title">Horário de Abertura</p>
                                 {% for hours in page.operating_hours %}
