@@ -26,8 +26,12 @@
                     <div class="row">
                         <div class="bread-detail__meta">
                             {% if page.origin %}
-                                <p class="bread-detail__meta-title">Origem</p>
-                                <p class="bread-detail__meta-content">{{ page.origin }}</p>
+                                <p class="bread-detail__meta-title">Locais de Produção</p>
+                                <p class="bread-detail__meta-content">
+                                    {% for x in page.origin.all %}
+                                    {{ x }}
+                                    {% endfor %}
+                                </p>
                             {% endif %}
                             
                             

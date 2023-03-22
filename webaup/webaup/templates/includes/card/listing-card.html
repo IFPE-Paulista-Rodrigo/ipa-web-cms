@@ -13,8 +13,14 @@
                 <table class="listing-card__meta">
                     {% if page.origin %}
                         <tr>
-                            <td class="listing-card__meta-category">Origem</td>
-                            <td class="listing-card__meta-content">{{ page.origin }}</td>
+                            <td class="listing-card__meta-category">Locais de Produção</td>
+                            <td class="listing-card__meta-content">
+                            
+                            {% for x in page.origin.all %}
+                                {{ x }}
+                            {% endfor %}
+
+                        </td>
                         </tr>
                     {% endif %}
                     

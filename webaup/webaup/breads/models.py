@@ -9,6 +9,7 @@ from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
 from webaup.base.blocks import BaseStreamBlock
+from webaup.locations.models import LocationPage
 
 
 @register_snippet
@@ -96,13 +97,7 @@ class BreadPage(Page):
     body = StreamField(
         BaseStreamBlock(), verbose_name="Page body", blank=True, use_json_field=True
     )
-    origin = models.ForeignKey(
-        Country,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-    )
-
+   
     # We include related_name='+' to avoid name collisions on relationships.
     # e.g. there are two FooPage models in two different apps,
     # and they both have a FK to bread_type, they'll both try to create a
@@ -115,13 +110,18 @@ class BreadPage(Page):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    
     ingredients = ParentalManyToManyField("BreadIngredient", blank=True)
-
+    origin = ParentalManyToManyField("Country", blank=True)
+    
     content_panels = Page.content_panels + [
         FieldPanel("introduction", classname="full"),
         FieldPanel("image"),
         FieldPanel("body"),
-        FieldPanel("origin"),
+        FieldPanel(
+                    "origin",
+                    widget=forms.CheckboxSelectMultiple,
+                ),
         FieldPanel("bread_type"),
         MultiFieldPanel(
             [
