@@ -8,6 +8,8 @@ from wagtail.admin.panels import FieldPanel, InlinePanel
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
+from wagtail.snippets.models import register_snippet
+from wagtail.api import APIField
 
 from webaup.base.blocks import BaseStreamBlock
 from webaup.locations.choices import DAY_CHOICES
@@ -101,12 +103,10 @@ class LocationsIndexPage(Page):
         FieldPanel("image"),
     ]
 
-
 class LocationPage(Page):
     """
     Detail for a specific bakery location.
     """
-
     introduction = models.TextField(help_text="Texto para descrever a página", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -154,6 +154,17 @@ class LocationPage(Page):
         FieldPanel("email"),
         FieldPanel("phone"),
         InlinePanel("hours_of_operation", label="Hours of Operation"),
+    ]
+
+    api_fields = [
+        APIField("introduction"),
+        APIField("image"),
+        APIField("body"),
+        APIField("address"),
+        APIField("lat_long"),
+        APIField("email"),
+        APIField("phone"),
+        APIField("hours_of_operation")
     ]
 
     def __str__(self):

@@ -7,9 +7,11 @@ from wagtail.fields import StreamField
 from wagtail.models import DraftStateMixin, Page, RevisionMixin
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
+from wagtail.api import APIField
 
 from webaup.base.blocks import BaseStreamBlock
 from webaup.locations.models import LocationPage
+from wagtail.models import Page
 
 
 @register_snippet
@@ -23,16 +25,22 @@ class Country(models.Model):
     Country can be added) that is one-way (e.g. Country will have no way to
     access related BreadPage objects).
     """
-
-    title = models.CharField(max_length=100)
-
+    title = models.CharField(max_length=100, null=True)
+    countries = models.ForeignKey(
+        LocationPage,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        
+    ) 
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name_plural = "Locais de Origem"
+     
 
-
+    
 @register_snippet
 class BreadIngredient(DraftStateMixin, RevisionMixin, models.Model):
     """
@@ -140,6 +148,16 @@ class BreadPage(Page):
     ]
 
     parent_page_types = ["BreadsIndexPage"]
+
+    api_fields = [
+        APIField("introduction"),
+        APIField("image"),
+        APIField("body"),
+        APIField("origin"),
+        
+    ]
+
+
 
 
 class BreadsIndexPage(Page):

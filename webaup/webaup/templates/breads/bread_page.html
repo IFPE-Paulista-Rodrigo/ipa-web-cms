@@ -29,7 +29,7 @@
                                 <p class="bread-detail__meta-title">Locais de Produção</p>
                                 <p class="bread-detail__meta-content">
                                     {% for x in page.origin.all %}
-                                    {{ x }}
+                                        <a href="/locations/{{x}}/"> {{x}} </a>
                                     {% endfor %}
                                 </p>
                             {% endif %}
