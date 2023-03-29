@@ -7,6 +7,7 @@ from wagtail.contrib.modeladmin.options import (
 from webaup.base.models import FooterText, Person
 from webaup.breads.models import BreadIngredient, BreadType, Country
 
+
 """
 N.B. To see what icons are available for use in Wagtail menus and StreamField block types,
 enable the styleguide in settings:
@@ -41,12 +42,6 @@ class BreadCountryAdmin(ModelAdmin):
     search_fields = ("title",)
 
 
-class BreadModelAdminGroup(ModelAdminGroup):
-    menu_label = "Bread Categories"
-    menu_icon = "fa-suitcase"  # change as required
-    menu_order = 200  # will put in 3rd place (000 being 1st, 100 2nd)
-    items = (BreadIngredientAdmin, BreadTypeAdmin, BreadCountryAdmin)
-
 
 class PersonModelAdmin(ModelAdmin):
     model = Person
@@ -63,14 +58,8 @@ class FooterTextAdmin(ModelAdmin):
     search_fields = ("body",)
 
 
-class BakeryModelAdminGroup(ModelAdminGroup):
-    menu_label = "Bakery Misc"
-    menu_icon = "fa-cutlery"  # change as required
-    menu_order = 300  # will put in 4th place (000 being 1st, 100 2nd)
-    items = (PersonModelAdmin, FooterTextAdmin)
-
-
 # When using a ModelAdminGroup class to group several ModelAdmin classes together,
 # you only need to register the ModelAdminGroup class with Wagtail:
-modeladmin_register(BreadModelAdminGroup)
-modeladmin_register(BakeryModelAdminGroup)
+
+
+
