@@ -15,7 +15,9 @@ webaup/settings/local.py
 webaupdb
 node_modules
 venv
+ipacms
 .venv
+.ipacms
 __pycache__
 .vagrant/
 /.vagrant/
