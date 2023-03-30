@@ -290,206 +290,45 @@
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 1,
     "fields": {
       "title": "Paulista"
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 2,
     "fields": {
       "title": "Arcoverde"
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 3,
     "fields": {
       "title": "Garanhuns"
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 4,
     "fields": {
       "title": "Petrolina"
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 5,
     "fields": {
       "title": "Caruaru"
     }
   },
   {
-    "model": "breads.country",
+    "model": "products.country",
     "pk": 6,
     "fields": {
       "title": "Escada"
-    }
-  },
-  {
-    "model": "breads.breadingredient",
-    "pk": 1,
-    "fields": {
-      "name": "Yeast"
-    }
-  },
-  {
-    "model": "breads.breadingredient",
-    "pk": 2,
-    "fields": {
-      "name": "Flour"
-    }
-  },
-  {
-    "model": "breads.breadingredient",
-    "pk": 3,
-    "fields": {
-      "name": "Water"
-    }
-  },
-  {
-    "model": "breads.breadingredient",
-    "pk": 4,
-    "fields": {
-      "name": "Cinnamon"
-    }
-  },
-  {
-    "model": "breads.breadingredient",
-    "pk": 5,
-    "fields": {
-      "name": "Salt"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 1,
-    "fields": {
-      "title": "asdf"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 2,
-    "fields": {
-      "title": "Flatbread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 3,
-    "fields": {
-      "title": "Buckwheat bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 4,
-    "fields": {
-      "title": "Yeast bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 5,
-    "fields": {
-      "title": "Sweet bun"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 6,
-    "fields": {
-      "title": "Varies widely"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 7,
-    "fields": {
-      "title": "Cornbread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 8,
-    "fields": {
-      "title": "Various thick, round breads"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 9,
-    "fields": {
-      "title": "Sweet bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 10,
-    "fields": {
-      "title": "Fruit bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 11,
-    "fields": {
-      "title": "Unleavened bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 12,
-    "fields": {
-      "title": "Quick or yeast bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 13,
-    "fields": {
-      "title": "Waffle"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 14,
-    "fields": {
-      "title": "Unleavened Flatbread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 15,
-    "fields": {
-      "title": "Yeast bread or unleavened"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 16,
-    "fields": {
-      "title": "Rye bread"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 17,
-    "fields": {
-      "title": "Bun"
-    }
-  },
-  {
-    "model": "breads.breadtype",
-    "pk": 18,
-    "fields": {
-      "title": "Pancake"
     }
   },
   {
@@ -1354,7 +1193,7 @@
       "title": "Produtos",
       "draft_title": "Produtos",
       "slug": "produtos",
-      "content_type": ["breads", "breadsindexpage"],
+      "content_type": ["products", "productsindexpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/",
@@ -1380,7 +1219,7 @@
       "title": "Batata Doce",
       "draft_title": "BatataDoce",
       "slug": "batata-doce",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/batata-doce/",
@@ -1406,7 +1245,7 @@
       "title": "Acerola",
       "draft_title": "Acerola",
       "slug": "acerola",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/acerola/",
@@ -1432,7 +1271,7 @@
       "title": "Laranja",
       "draft_title": "Laranja",
       "slug": "laranja",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/laranja/",
@@ -1458,7 +1297,7 @@
       "title": "Banana",
       "draft_title": "Banana",
       "slug": "banana",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/banana/",
@@ -1484,7 +1323,7 @@
       "title": "Coentro",
       "draft_title": "Coentro",
       "slug": "coentro",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/coentro/",
@@ -1510,7 +1349,7 @@
       "title": "Beterraba",
       "draft_title": "Beterraba",
       "slug": "beterraba",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/beterraba/",
@@ -1536,7 +1375,7 @@
       "title": "Alface",
       "draft_title": "Alface",
       "slug": "alface",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/alface/",
@@ -1562,7 +1401,7 @@
       "title": "Cenoura",
       "draft_title": "Cenoura",
       "slug": "cenoura",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/cenoura/",
@@ -1588,7 +1427,7 @@
       "title": "Cebola",
       "draft_title": "Cebola",
       "slug": "cebola",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/cebola/",
@@ -1614,7 +1453,7 @@
       "title": "Repolho",
       "draft_title": "Repolho",
       "slug": "repolho",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/repolho/",
@@ -1640,7 +1479,7 @@
       "title": "Tomate",
       "draft_title": "Tomate",
       "slug": "tomate",
-      "content_type": ["breads", "breadpage"],
+      "content_type": ["products", "productpage"],
       "live": true,
       "has_unpublished_changes": false,
       "url_path": "/home/produtos/tomate/",
@@ -1871,7 +1710,7 @@
       "path": "0001000200040002",
       "depth": 4,
       "numchild": 0,
-      "title": "Bread and Circuses",
+      "title": "Breads and Circuses",
       "draft_title": "Bread and Circuses",
       "slug": "bread-circuses",
       "content_type": ["blog", "blogpage"],
@@ -2932,7 +2771,7 @@
     }
   },
   {
-    "model": "breads.breadsindexpage",
+    "model": "products.productsindexpage",
     "pk": 3,
     "fields": {
       "introduction": "Aqui você vai encontrar os produtos produzidos nas AUPs",
@@ -2940,135 +2779,121 @@
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 34,
     "fields": {
       "introduction": "A batata-doce é um tubérculo, ou raiz, que tem ótima quantidade de energia, pois tem alto teor de carboidratos e ainda é rica em fibras, vitaminas do complexo B, vitamina A, vitamina C e minerais, como o potássio e o magnésio, o que garante diversos benefícios, como prevenção da diabetes, câncer e infarto, melhora da saúde intestinal e aumento da massa muscular.",
       "image": 26,
       "body": "[]",
-      "origin": [3 , 5],
-      "bread_type": 4,
-      "ingredients": []
+      "origin": [3 , 5]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 35,
     "fields": {
       "introduction": "A acerola é uma fruta rica em vitamina C, um nutriente com propriedades antioxidantes e anti-inflamatórias que combatem os radicais livres, ajudando a evitar o surgimento de situações, como envelhecimento precoce, câncer e pressão alta.",
       "image": 34,
       "body": "[]",
-      "origin": [4],
-      "bread_type": 5,
-      "ingredients": []
+      "origin": [4]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 36,
     "fields": {
       "introduction": "A laranja é uma fruta rica em fibras, vitaminas A, vitamina C, flavonoides e betacaroteno com propriedades antioxidantes e anti-inflamatórias, que auxiliam no combate ao envelhecimento precoce, ajudam a reduzir o colesterol ruim, protegendo de doenças cardiovasculares, e fortalecem o sistema imunológico.",
       "image": 28,
       "body": "[]",
-      "origin": [5],
-      "bread_type": 6,
-      "ingredients": []
+      "origin": [5]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 37,
     "fields": {
       "introduction": "A banana é uma fruta que traz diversos benefícios para a saúde, como fornecer energia para o corpo, reduzir a pressão arterial, evitar cãibras musculares e favorecer o aumento da serotonina, combatendo a depressão e melhorando o humor.",
       "image": 29,
       "body": "[]",
-      "origin": [6],
-      "bread_type": 7,
-      "ingredients": []
+      "origin": [6]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 39,
     "fields": {
       "introduction": "O coentro é uma planta aromática rica em compostos fenólicos, como carotenoides, taninos, flavonoides e saponinas que promovem benefícios para a saúde, como controle dos níveis de colesterol e glicose no sangue, evitando doenças como infarto e diabetes.",
       "image": 30,
       "body": "[]",
-      "origin": [1],
-      "bread_type": 4,
-      "ingredients": []
+      "origin": [1]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 40,
     "fields": {
       "introduction": "A beterraba é um vegetal rico em vitamina C, betalaína, carotenoides e flavonoides, que são antioxidantes que combatem o excesso de radicais livres no organismo, prevenindo danos às células saudáveis e ajudando na proteção contra o câncer e algumas doenças crônicas.",
       "image": 31,
       "body": "[]",
-      "origin": [2],
-      "bread_type": 4,
-      "ingredients": []
+      "origin": [2]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 42,
     "fields": {
       "introduction": "A alface é uma verdura rica em fibras e antioxidantes, favorecendo a perda de peso, melhorando a saúde gastrointestinal e regulando os níveis de açúcar no sangue. ",
       "image": 32,
       "body": "[]",
-      "origin": [3],
-      "bread_type": 2,
-      "ingredients": []
+      "origin": [3]
+
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 49,
     "fields": {
       "introduction": "A cenoura é um legume rico em carotenoides, potássio, fibras e antioxidantes, nutrientes que promovem a saúde dos olhos, evitam o envelhecimento precoce e fortalecem o sistema imunológico.",
       "image": 33,
       "body": "[]",
-      "origin": [4],
-      "bread_type": 11,
-      "ingredients": []
+      "origin": [4]
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 53,
     "fields": {
       "introduction": "A cebola é um vegetal popularmente utilizado para temperar vários alimentos. Esse vegetal possui diversos benefícios para a saúde, pois possui propriedades antivirais, antifúngicas, antibacterianas, anti-inflamatórias, anticancerígenas, hipoglicemiantes e antioxidantes.",
       "image": 40,
       "body": "[]",
-      "origin": [5],
-      "bread_type": 14,
-      "ingredients": []
+      "origin": [5]
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 57,
     "fields": {
       "introduction": "O repolho é uma hortaliça rica em fibras e antioxidantes que reduzem a absorção de gordura dos alimentos e evitam a oxidação das células de gordura, ajudando a diminuir os níveis de colesterol ruim no sangue.",
       "image": 39,
       "body": "[]",
-      "origin": [6],
-      "bread_type": 16,
-      "ingredients": []
+      "origin": [6]
     }
   },
   {
-    "model": "breads.breadpage",
+    "model": "products.productpage",
     "pk": 59,
     "fields": {
       "introduction": "O tomate é um fruto rico em vitamina C, vitamina A, vitamina K e licopeno, que é um potente antioxidante, ajudando, por isso, a manter a saúde da pele, fortalecer o sistema imunológico e evitar doenças como infarto e aterosclerose.",
       "image": 36,
       "body": "[]",
-      "origin": [3],
-      "bread_type": 2,
-      "ingredients": []
+      "origin": [3]
+
     }
   },
   {

@@ -41,54 +41,7 @@ class Country(models.Model):
      
 
     
-@register_snippet
-class BreadIngredient(DraftStateMixin, RevisionMixin, models.Model):
-    """
-    Standard Django model that is displayed as a snippet within the admin due
-    to the `@register_snippet` decorator. We use a new piece of functionality
-    available to Wagtail called the ParentalManyToManyField on the BreadPage
-    model to display this. The Wagtail Docs give a slightly more detailed example
-    https://docs.wagtail.org/en/stable/getting_started/tutorial.html#categories
-    """
-
-    name = models.CharField(max_length=255)
-
-    panels = [
-        FieldPanel("name"),
-    ]
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name_plural = "Bread ingredients"
-
-
-@register_snippet
-class BreadType(RevisionMixin, models.Model):
-    """
-    A Django model to define the bread type
-    It uses the `@register_snippet` decorator to allow it to be accessible
-    via the Snippets UI. In the BreadPage model you'll see we use a ForeignKey
-    to create the relationship between BreadType and BreadPage. This allows a
-    single relationship (e.g only one BreadType can be added) that is one-way
-    (e.g. BreadType will have no way to access related BreadPage objects)
-    """
-
-    title = models.CharField(max_length=255)
-
-    panels = [
-        FieldPanel("title"),
-    ]
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = "Bread types"
-
-
-class BreadPage(Page):
+class ProductPage(Page):
     """
     Detail view for a specific bread
     """
@@ -111,15 +64,7 @@ class BreadPage(Page):
     # and they both have a FK to bread_type, they'll both try to create a
     # relationship called `foopage_objects` that will throw a valueError on
     # collision.
-    bread_type = models.ForeignKey(
-        "breads.BreadType",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="+",
-    )
-    
-    ingredients = ParentalManyToManyField("BreadIngredient", blank=True)
+      
     origin = ParentalManyToManyField("Country", blank=True)
     
     content_panels = Page.content_panels + [
@@ -130,24 +75,14 @@ class BreadPage(Page):
                     "origin",
                     widget=forms.CheckboxSelectMultiple,
                 ),
-        FieldPanel("bread_type"),
-        MultiFieldPanel(
-            [
-                FieldPanel(
-                    "ingredients",
-                    widget=forms.CheckboxSelectMultiple,
-                ),
-            ],
-            heading="Additional Metadata",
-            classname="collapsible collapsed",
-        ),
+               
     ]
 
     search_fields = Page.search_fields + [
         index.SearchField("body"),
     ]
 
-    parent_page_types = ["BreadsIndexPage"]
+    parent_page_types = ["ProductsIndexPage"]
 
     api_fields = [
         APIField("introduction"),
@@ -160,7 +95,7 @@ class BreadPage(Page):
 
 
 
-class BreadsIndexPage(Page):
+class ProductsIndexPage(Page):
     """
     Index page for breads.
 
@@ -185,13 +120,13 @@ class BreadsIndexPage(Page):
     ]
 
     # Can only have BreadPage children
-    subpage_types = ["BreadPage"]
+    subpage_types = ["ProductPage"]
 
     # Returns a queryset of BreadPage objects that are live, that are direct
     # descendants of this index page with most recent first
-    def get_breads(self):
+    def get_products(self):
         return (
-            BreadPage.objects.live().descendant_of(self).order_by("-first_published_at")
+            ProductPage.objects.live().descendant_of(self).order_by("-first_published_at")
         )
 
     # Allows child objects (e.g. BreadPage objects) to be accessible via the
@@ -205,7 +140,7 @@ class BreadsIndexPage(Page):
     # method on the model rather than within a view function
     def paginate(self, request, *args):
         page = request.GET.get("page")
-        paginator = Paginator(self.get_breads(), 12)
+        paginator = Paginator(self.get_products(), 12)
         try:
             pages = paginator.page(page)
         except PageNotAnInteger:
@@ -217,11 +152,11 @@ class BreadsIndexPage(Page):
     # Returns the above to the get_context method that is used to populate the
     # template
     def get_context(self, request):
-        context = super(BreadsIndexPage, self).get_context(request)
+        context = super(ProductsIndexPage, self).get_context(request)
 
         # BreadPage objects (get_breads) are passed through pagination
-        breads = self.paginate(request, self.get_breads())
+        products = self.paginate(request, self.get_products())
 
-        context["breads"] = breads
+        context["products"] = products
 
         return context

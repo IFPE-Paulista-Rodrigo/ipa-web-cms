@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     
     "webaup.base",
     "webaup.blog",
-    "webaup.breads",
+    "webaup.products",
     "webaup.locations",
     "webaup.search",
 

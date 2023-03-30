@@ -5,7 +5,7 @@ from wagtail.models import Page
 from wagtail.search.models import Query
 
 from webaup.blog.models import BlogPage
-from webaup.breads.models import BreadPage
+from webaup.products.models import ProductPage
 from webaup.locations.models import LocationPage
 
 
@@ -25,13 +25,13 @@ def search(request):
             blog_results = BlogPage.objects.live().search(search_query)
             blog_page_ids = [p.page_ptr.id for p in blog_results]
 
-            bread_results = BreadPage.objects.live().search(search_query)
-            bread_page_ids = [p.page_ptr.id for p in bread_results]
+            product_results = ProductPage.objects.live().search(search_query)
+            product_page_ids = [p.page_ptr.id for p in product_results]
 
             location_results = LocationPage.objects.live().search(search_query)
             location_result_ids = [p.page_ptr.id for p in location_results]
 
-            page_ids = blog_page_ids + bread_page_ids + location_result_ids
+            page_ids = blog_page_ids + product_page_ids + location_result_ids
             search_results = Page.objects.live().filter(id__in=page_ids)
 
         query = Query.get(search_query)

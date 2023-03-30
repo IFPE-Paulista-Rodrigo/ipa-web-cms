@@ -5,7 +5,7 @@ from wagtail.contrib.modeladmin.options import (
 )
 
 from webaup.base.models import FooterText, Person
-from webaup.breads.models import BreadIngredient, BreadType, Country
+from webaup.products.models import Country
 
 
 """
@@ -25,19 +25,8 @@ font-awesome icon set is available to you. Options are at https://fontawesome.co
 """
 
 
-class BreadIngredientAdmin(ModelAdmin):
-    # These stub classes allow us to put various models into the custom "Wagtail Bakery" menu item
-    # rather than under the default Snippets section.
-    model = BreadIngredient
-    search_fields = ("name",)
 
-
-class BreadTypeAdmin(ModelAdmin):
-    model = BreadType
-    search_fields = ("title",)
-
-
-class BreadCountryAdmin(ModelAdmin):
+class ProductCountryAdmin(ModelAdmin):
     model = Country
     search_fields = ("title",)
 

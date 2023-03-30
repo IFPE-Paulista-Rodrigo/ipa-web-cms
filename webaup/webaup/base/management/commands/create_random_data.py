@@ -11,11 +11,9 @@ from willow.image import Image as WillowImage
 
 from webaup.base.models import FooterText, HomePage, Person, StandardPage
 from webaup.blog.models import BlogIndexPage, BlogPage
-from webaup.breads.models import (
-    BreadIngredient,
-    BreadPage,
-    BreadsIndexPage,
-    BreadType,
+from webaup.products.models import (
+    ProductPage,
+    ProductsIndexPage,
     Country,
 )
 from webaup.locations.models import LocationPage, LocationsIndexPage
@@ -53,16 +51,15 @@ class Command(BaseCommand):
         return lorem_ipsum.words(4, common=False)
 
     def create_pages(self, page_count):
-        self.stdout.write("Creating bread pages...")
-        breads_index = BreadsIndexPage.objects.live().first()
+        self.stdout.write("Creating product pages...")
+        products_index = ProductsIndexPage.objects.live().first()
         for _ in range(page_count):
             title = self.make_title()
-            breads_index.add_child(
-                instance=BreadPage(
+            products_index.add_child(
+                instance=ProductPage(
                     title=title,
                     slug=slugify(title),
                     introduction=lorem_ipsum.paragraph(),
-                    bread_type=self.get_random_model(BreadType),
                     body=self.fake_stream_field(),
                     origin=self.get_random_model(Country),
                     image=self.get_random_model(Image),
@@ -129,14 +126,6 @@ class Command(BaseCommand):
         self.stdout.write("Creating countries...")
         for _ in range(snippet_count):
             Country.objects.create(title=self.make_title())
-
-        self.stdout.write("Creating bread ingredients...")
-        for _ in range(snippet_count):
-            BreadIngredient.objects.create(name=self.make_title())
-
-        self.stdout.write("Creating bread types...")
-        for _ in range(snippet_count):
-            BreadType.objects.create(title=self.make_title())
 
         self.stdout.write("Creating people...")
         for _ in range(snippet_count):
