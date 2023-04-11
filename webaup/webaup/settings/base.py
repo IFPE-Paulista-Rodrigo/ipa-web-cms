@@ -210,6 +210,8 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "pythonlip@gmail.com"
-EMAIL_HOST_PASSWORD = "kikfkawatrdkcamj"
+EMAIL_HOST_PASSWORD = "xnmcjhagcksosciq"
 EMAIL_USE_TLS = True
-EMAIL_FAIL_SILENT = False
+EMAIL_FAIL_SILENT = False 
+
+CSRF_TRUSTED_ORIGINS = ['http://ec2-44-192-111-70.compute-1.amazonaws.com/']
