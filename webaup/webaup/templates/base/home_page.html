@@ -74,115 +74,143 @@
                
                      <h2 class="locations-section__title">{{ page.featured_section_2_title }}</h2>
                      <div class="leaflet-container">
-        
+                        
                         <script>
-                            
-                        function map_init_basic (map, options) {
-                        var newIcon = L.icon({
-                            iconUrl:'/static/img/legumes.png',
-                            iconSize: [28,28],
-                            iconAnchor: [22,22],
-                        });  
-                            
-                        var marker = L.marker([-7.937980684863552, -34.877658401127235], {icon: newIcon}).addTo(map);
-                
-                        marker.bindPopup("<b>Paulista</b>");
-                        marker.on('click', function() {
-                        window.location.href = 'locations/paulista';
-                        });
-                
-                        var marker = L.marker([-7.789138019262623, -35.09218464591248], {icon: newIcon}).addTo(map);
-                
-                            marker.bindPopup("<b>Araçoiaba</b>");
-                            marker.on('click', function() {
-                            window.location.href = 'locations/aracoiaba';
-                        });
-                
-                        var marker = L.marker([-7.9065512704756085, -34.90171416930324], {icon: newIcon}).addTo(map);
-                
-                            marker.bindPopup("<b>Abreu e Lima</b>");
-                            marker.on('click', function() {
-                            window.location.href = 'locations/abreu-e-lima';
-                        });
-
-                        var marker = L.marker([-8.286382458980146, -35.03800221581159], {icon: newIcon}).addTo(map);
-                
-                            marker.bindPopup("<b>Cabo de Santo Agostinho</b>");
-                            marker.on('click', function() {
-                            window.location.href = 'locations/cabo-de-santo-agostinho';
-                        });
-
-                        var marker = L.marker([-8.019225210232692, -34.976781717352885], {icon: newIcon}).addTo(map);
-                
-                            marker.bindPopup("<b>Camaragie</b>");
-                            marker.on('click', function() {
-                            window.location.href = 'locations/camaragibe';
-                        });
-
-                        var marker = L.marker([-7.852650513917349, -34.90928562372254], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Igarassu</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/igarassu'
-                        });
-
-                        var marker = L.marker([-8.398291887472995, -35.061295907102], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Ipojuca</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/ipojuca'
-                        });
-
-                        var marker = L.marker([-7.733605663405219, -34.82586290354762], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Ilha de Itamaracá</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/ilha-de-itamaraca'
-                        });
-
-                        var marker = L.marker([-7.775944093170436, -34.899513172135], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Itapissuma</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/itapissuma'
-                        });
-                            
-                        var marker = L.marker([-8.125963100030882, -34.923699419684795], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Jaboatão dos Guararapes</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/jaboatao-dos-guararapes'
-                        });
-
-                        var marker = L.marker([-8.118578972958462, -35.10131209537802], {icon: newIcon}).addTo(map)
-
-                        marker.bindPopup("<b>Moreno</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/moreno'
-                        });
+                            function map_init_basic(map, options) {
+                                var newIcon = L.icon({
+                                    iconUrl: '/static/img/legumes.png',
+                                    iconSize: [28, 28],
+                                    iconAnchor: [22, 22],
+                                });
+                                var paulistaMarker = L.marker([-7.937980684863552, -34.877658401127235], { icon: newIcon }).addTo(map);
+                                paulistaMarker.on('mouseover', function() {
+                                    paulistaMarker.bindTooltip("<b>Paulista</b>").openTooltip();
+                                });
                         
-                        var marker = L.marker([-8.013997488019859, -34.8495795121376], {icon: newIcon}).addTo(map)
+                                paulistaMarker.on('click', function() {
+                                    window.location.href = 'locations/paulista';
+                                });
+                                
+                                var aracoiabaMarker = L.marker([-7.789138019262623, -35.09218464591248], {icon: newIcon}).addTo(map);
+                                aracoiabaMarker.on('mouseover', function(){
+                                    aracoiabaMarker.bindTooltip("<b>Araçoiaba</b>").openTooltip();
+                                });
+                                
+                                aracoiabaMarker.on('click', function(){
+                                    window.location.href = 'locations/aracoiaba'                               
+                                });
 
-                        marker.bindPopup("<b>Olinda</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/olinda'
-                        });
-                        
-                        var marker = L.marker([-8.053351660945166, -34.87151719155182], {icon: newIcon}).addTo(map)
+                                var abreuMarker = L.marker([-7.9065512704756085, -34.90171416930324], {icon: newIcon}).addTo(map);
+                                abreuMarker.on('mouseover', function(){
+                                    abreuMarker.bindTooltip("<b>Abreu e Lima</b>").openTooltip();
+                                });
 
-                        marker.bindPopup("<b>Recife</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/recife'
-                        });
+                                abreuMarker.on('click', function(){
+                                    window.location.href = 'locations/abreu-e-lima'
+                                });
 
-                        var marker = L.marker([-8.005572724653923, -35.024520114304046], {icon: newIcon}).addTo(map)
+                                var caboMarker = L.marker([-8.286382458980146, -35.03800221581159], {icon: newIcon}).addTo(map);
+                                caboMarker.on('mouseover', function(){
+                                    caboMarker.bindTooltip("<b>Cabo de Santo Agostinho</b>").openTooltip();
+                                });
 
-                        marker.bindPopup("<b>São Lourenço da Mata</b>");
-                        marker.on('click', function(){
-                            window.location.href = 'locations/sao-lourenco-da-mata'
-                        });
+                                caboMarker.on('click', function(){
+                                    window.location.href = 'locations/cabo-de-santo-agostinho'
+                                });
+
+                                var camaragibeMarker = L.marker([-8.019225210232692, -34.976781717352885], {icon: newIcon}).addTo(map);
+                                camaragibeMarker.on('mouseover', function(){
+                                    camaragibeMarker.bindTooltip("<b>Camaragibe</b>").openTooltip();
+                                });
+
+                                camaragibeMarker.on('click', function(){
+                                    window.location.href = 'locations/camaragibe'
+                                });
+
+                                var igarassuMarker = L.marker([-7.852650513917349, -34.90928562372254], {icon: newIcon}).addTo(map)
+                                igarassuMarker.on('mouseover', function(){
+                                    igarassuMarker.bindTooltip("<b>Igarassu</b>")
+                                });
+                                
+                                igarassuMarker.on('click', function(){
+                                    window.location.href = 'locations/igarassu'
+                                });
+
+                                var ipojucaMarker = L.marker([-8.398291887472995, -35.061295907102], {icon: newIcon}).addTo(map)
+                                ipojucaMarker.on('mouseover', function(){
+                                    ipojucaMarker.bindTooltip("<b>Ipojuca</b>")
+                                });
+
+                                ipojucaMarker.on('click', function(){
+                                    window.location.href = 'locations/ipojuca'
+                                });
+
+                                var itamaracaMarker = L.marker([-7.733605663405219, -34.82586290354762], {icon: newIcon}).addTo(map)
+                                itamaracaMarker.on('mouseover', function(){
+                                    itamaracaMarker.bindTooltip("<b>Ilha de Itamaracá</b>")
+                                });
+
+                                itamaracaMarker.on('click', function(){
+                                    window.location.href = 'locations/ilha-de-itamaraca'
+                                });
+
+                                var itapissumaMarker = L.marker([-7.775944093170436, -34.899513172135], {icon: newIcon}).addTo(map)
+                                itapissumaMarker.on('mouseover', function(){
+                                    itapissumaMarker.bindTooltip("<b>Itapissuma</b>")
+                                });
+
+                                itapissumaMarker.on('click', function(){
+                                    window.location.href = 'locations/itapissuma'
+                                });
+
+                                var jaboataoMarker = L.marker([-8.125963100030882, -34.923699419684795], {icon: newIcon}).addTo(map)
+                                jaboataoMarker.on('mouseover', function(){
+                                    jaboataoMarker.bindTooltip("<b>Jaboatão dos Guararapes</b>")
+                                });
+
+                                jaboataoMarker.on('click', function(){
+                                    window.location.href = 'locations/jaboatao-dos-guararapes'
+                                });
+
+                                var morenoMarker = L.marker([-8.118578972958462, -35.10131209537802], {icon: newIcon}).addTo(map)
+                                morenoMarker.on('mouseover', function(){
+                                    morenoMarker.bindTooltip("<b>Moreno</b>")
+                                });
+
+                                morenoMarker.on('click', function(){
+                                    window.location.href = 'locations/moreno'
+                                });
+
+                                var olindaMarker = L.marker([-8.013997488019859, -34.8495795121376], {icon: newIcon}).addTo(map)
+                                olindaMarker.on('mouseover', function(){
+                                    olindaMarker.bindTooltip("<b>Olinda</b>")
+                                });
+
+                                olindaMarker.on('click', function(){
+                                    window.location.href = 'locations/olinda'
+                                });
+
+                                var recifeMarker = L.marker([-8.053351660945166, -34.87151719155182], {icon: newIcon}).addTo(map)
+                                recifeMarker.on('mouseover', function(){
+                                    recifeMarker.bindTooltip("<b>Recife</b>")
+                                });
+
+                                recifeMarker.on('click', function(){
+                                    window.location.href = 'locations/recife'
+                                });
+
+                                var saoLourencoMarker =  L.marker([-8.005572724653923, -35.024520114304046], {icon: newIcon}).addTo(map)
+                                saoLourencoMarker.on('mouseover', function(){
+                                    saoLourencoMarker.bindTooltip("<b>São Lourenço da Mata</b>")
+                                });
+
+                                saoLourencoMarker.on('click', function(){
+                                    window.href.location = 'locations/sao-lourenco-da-mata'
+                                });
+
                             }
                         </script>
+                        
                         
                         {% leaflet_map "mapaPrincipal" callback="window.map_init_basic" %}
                         </div>   

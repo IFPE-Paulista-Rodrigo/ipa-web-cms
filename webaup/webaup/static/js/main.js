@@ -23,23 +23,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function map_init_basic (map, options) {
-  L.marker([-7.937980684863552, -34.877658401127235])
-  .addTo(map)
-  map.on('click', function redirectPaulista(){
-      window.location.href="locations/paulista";
-      
-  });
-  
-  L.marker([-8.29316784386745, -35.983504001363464])
-  .addTo(map) 
-  map.on('click', function redirectSaoJose(){
-     window.location.href="locations/caruaru";
-  });
-  
-  L.marker([-8.419704518568702, -37.05587860053689])
-  .addTo(map) 
-  map.on('click', function (){
-      window.location.href="locations/arcoverde";
-  })
-}

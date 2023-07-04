@@ -63,21 +63,6 @@
   },
   {
     "model": "base.formfield",
-    "pk": 4,
-    "fields": {
-      "sort_order": 3,
-      "label": "Assunto",
-      "clean_name": "purpose",
-      "field_type": "dropdown",
-      "required": true,
-      "choices": "Dúvida, Sugestão",
-      "default_value": "",
-      "help_text": "",
-      "page": 69
-    }
-  },
-  {
-    "model": "base.formfield",
     "pk": 5,
     "fields": {
       "sort_order": 4,
@@ -4197,7 +4182,7 @@
     "fields": {
       "to_address": "fabiojulio.santos@protonmail.ch",
       "from_address": "pythonlip@gmail.com",
-      "subject": "Contact message from Wagtail Demo site",
+      "subject": "Mensagem de Contato do portal IPA",
       "image": null,
       "body": "[{\"type\": \"paragraph_block\", \"value\": \"<p>\\u00a0</p><p>Utilize este formulário para entrar em contato conosco, enviando suas dúvidas, ou sugestões.</p>\"}]",
       "thank_you_text": "<p>Obrigado!</p><p>Recebemos sua mensagem e responderemos o mais rápido possível.</p>"
@@ -4239,7 +4224,7 @@
     "fields": {
       "introduction": "Bem Vindo ao portal de Agricultura Urbana e Periurbana!",
       "image": 41,
-      "body": "[{\"type\": \"paragraph_block\", \"value\": \"<h2>Este portal é mantido pelo Instituto Agronômico de Pernambuco</h2><p>O IPA foi criado em 1935 sob a denominação de Instituto de Pesquisas Agronômicas, órgão da administração direta do Estado de Pernambuco, com sede e laboratórios na cidade do Recife.</p> <p> Em 1960, foi transformado em autarquia, permanecendo com a mesma denominação, expandindo suas atividades para o interior por meio de uma rede de estações experimentais que lhe foi incorporada. </p> <p>Em 1975, segundo a Lei 6959, foi novamente transformado, recebendo a denominação de Empresa Pernambucana de Pesquisa Agropecuária, mantendo a sigla IPA, já consagrada no seu universo de atuação. </p> <p>Em consequência da reforma administrativa do Governo do Estado, cujo marco é Lei Complementar 049 de 31/01/2003, o IPA ampliou sua competência de entidade voltada para pesquisa e desenvolvimento e produção de bens e serviços agropecuários incorporando as atividades de assistência técnica, extensão rural e de infra-estrutura hídrica. O IPA, nos dias de hoje, integra o Sistema Nacional de Pesquisa Agropecuária (SNPA), coordenado pela EMBRAPA.</p>\"}]"
+      "body": "[{\"type\": \"paragraph_block\", \"value\": \"<h2>Agricultura Urbana e Periurbana</h2><p><p>Nas últimas décadas, a Agricultura Urbana e Periurbana (AUP) vêm crescendo significativamente nos centros urbanos. Segundo Santandreu; Lovo (2007), a prática dessa atividade torna-se uma maneira eficaz de garantia de Segurança Alimentar e Nutricional - SAN para as comunidades urbanas, além de aproximar a produção de alimentos com o produto final do consumidor. Outro aspecto importante é o papel da Agrecologia, que entra em cena junto com este modelo de produção de alimentos, garantindo produtos orgânicos de qualidade e reforçando as políticas de SAN.</p><p> A FAO (Food and Agriculture Organization) tem estimulado a sociedade e as diferentes esferas de governo a promoverem a AUP como uma alternativa para enfrentar problemas sociais, ambientais e econômicos, dessa forma, apontam que é possível abordar múltiplos problemas, pois, além de ser uma atividade de geração de renda, que pode promover a autonomia financeira e a qualidade de vida para pessoas de baixa renda, pode ser uma atividade que promove economia nas compras alimentícias, saúde psicológica, promoção do convívio comunitário, bem como a saúde alimentar, ao aproximar as pessoas do consumo de produtos orgânicos e naturais.</p> <p> O objetivo do projeto, é analisar o desenvolvimento da Agricultura Urbana e Periurbana - AUP na Região Metropolitana do Recife - RMR, de forma a subsidiar a formulação de políticas públicas para os municípios e a promoção de viabilização socioeconômica em populações vulneráveis.</p></p>\"}]"
     }
   }
 ]
