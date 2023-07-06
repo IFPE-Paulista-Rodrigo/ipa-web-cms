@@ -84,11 +84,15 @@ class ProductPage(Page):
 
     parent_page_types = ["ProductsIndexPage"]
 
+    @property
+    def origin_name(self):
+        return ", ".join([str(origin) for origin in self.origin.all()])
+
     api_fields = [
         APIField("introduction"),
         APIField("image"),
         APIField("body"),
-        APIField("origin"),
+        APIField("origin_name"),
         
     ]
 
